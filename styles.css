@@ -1,0 +1,218 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1a1a1a;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header, footer {
+    background-color: #333;
+    padding: 1rem;
+  }
+  
+  section {
+    padding: 1rem;
+  }
+  
+  #projects .project, #interviews .interview, #certifications .certification {
+    background-color: #222;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-left: 5px solid purple; /* Cambia esto según la categoría */
+  }
+  
+  h1, h2, p {
+    margin: 0;
+  }
+  
+nav {
+  background: #333;
+  color: white;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: flex-end; /* Centra los elementos del menú horizontalmente */
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide el área en dos columnas */
+    grid-template-rows: 1fr 1fr; /* Divide el área en dos filas */
+    gap: 1rem; /* Espacio entre las secciones */
+    height: calc(100vh - 4rem); /* Ajusta la altura al 100% de la altura de la ventana menos el padding del header y footer */
+  }
+  
+  #intro {
+    grid-column: 1 / 2; /* Ubica #intro en la columna de la izquierda */
+    grid-row: 1 / 2; /* Ubica #intro en la fila superior */
+    display: flex; /* Habilita flexbox para centrar el contenido */
+    flex-direction: column; /* Alinea los hijos en una columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+  }
+
+  #intro h1,
+  #intro h2{
+    text-align: center;
+    width: 100%;
+    font-size: 2em; /* Ajusta el tamaño de la fuente */
+    letter-spacing: 0.05em; /* Aumenta el espaciado entre letras */
+    line-height: 1.5; /* Ajusta el espaciado entre líneas */
+  }
+
+  #intro p {
+    text-align: center;
+    width: 100%;
+    font-size: 1.5em; /* Ajusta el tamaño de la fuente */
+    letter-spacing: 0.05em; /* Aumenta el espaciado entre letras */
+    line-height: 1.5; /* Ajusta el espaciado entre líneas */
+  }
+  
+  #projects {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  
+  #projects h2,
+  #interviews h2,
+  #certifications h2{
+    text-align: start; /* Centra el título */
+    font-size: 1.8em; /* Aumenta el tamaño del título */
+    letter-spacing: 0.05em;
+    color: white; /* Asegura que el título sea visible */
+    margin-bottom: 10px; /* Añade espacio debajo del título */
+  }
+
+  #projects h3,
+  #interviews h3,
+  #certifications h3{
+    text-align: start; /* Centra el título */
+    font-size: 1.3em; /* Aumenta el tamaño del título */
+    letter-spacing: 0.05em;
+    color: white; /* Asegura que el título sea visible */
+    margin-bottom: 10x; /* Añade espacio debajo del título */
+  }
+  
+  .projects-container {
+    display: flex; /* Habilita Flexbox para los rectángulos de los proyectos */
+    justify-content: space-around; /* Distribuye el espacio uniformemente */
+    align-items: center; /* Centra los ítems verticalmente */
+    flex-wrap: wrap; /* Permite que los rectángulos se ajusten según el ancho disponible */
+  }
+  
+  .project-rectangle {
+    width: 30%; /* Ancho de cada rectángulo */
+    height: 290px; /* Altura de los rectángulos */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #cb7afc; /* Color de fondo oscuro para el rectángulo */
+    margin: 10px;
+    color: white; /* Texto en color blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el contenido no desborde los bordes redondeados */
+  }
+  
+  .project-header {
+    padding: 10px;
+  }
+  
+  .project-name {
+    font-weight: bold;
+  }
+  
+  .project-tags {
+    background-color: #222; /* Color de fondo para las etiquetas */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around; /* Distribuye las etiquetas uniformemente */
+    flex-wrap: wrap; /* Permite que las etiquetas se envuelvan en filas adicionales si no hay espacio */
+  }
+  
+  .project-tags span {
+    background-color: #444; /* Color de fondo para cada etiqueta */
+    margin: 2px;
+    padding: 2px 6px;
+    border-radius: 4px; /* Bordes redondeados para las etiquetas */
+    font-size: 0.8em;
+  }
+  
+  .project-description {
+    padding: 10px;
+    background-color: #111; /* Color de fondo para la descripción */
+    flex-grow: 1; /* Hace que la descripción llene el espacio restante */
+  }
+  
+  .project-description p {
+    margin: 4px 0;
+    text-align: justify;
+  }
+  
+  /* Elimina el borde del último elemento para evitar duplicación */
+  .project-rectangle .rectangle-section:last-child {
+    border-bottom: none;
+  }
+  
+  #interviews {
+    grid-column: 2 / 3; /* Ubica #interviews en la columna de la derecha */
+    grid-row: 2 / 3; /* Ubica #interviews en la fila inferior */
+  }
+  
+  #certifications {
+    grid-column: 1 / 2; /* Ubica #certifications en la columna de la izquierda */
+    grid-row: 2 / 3; /* Ubica #certifications en la fila inferior */
+  }
+
+  .highlight {
+    color: #cb7afc;
+  }
+  .section-title {
+    display: flex; /* Utiliza Flexbox para alinear elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 10px; /* Espacio entre la imagen y el texto */
+  }
+  
+  .line-image {
+    justify-content: center;
+    width: 100%; /* Hace que la imagen ocupe el 100% del ancho de su contenedor */
+    max-width: 500px; /* Limita el ancho máximo de la imagen a 50px */
+    height: auto; /* Mantiene la proporción de la imagen ajustando automáticamente su altura */
+  }
+
+  .text-square {
+  border: 2px solid #cb7afc; /* Borde del cuadrado */
+  padding: 10px; /* Espaciado interior para el texto */
+  width: 300px; /* Ancho del cuadrado */
+  height: 90px; /* Altura del cuadrado */
+  display: flex; /* Usando Flexbox para alinear el contenido */
+  flex-direction: column; /* Coloca el contenido en columna */
+  justify-content: center; /* Centra el contenido verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  margin: auto; /* Centra el cuadrado horizontalmente si está dentro de un contenedor más grande */
+}
+
+.model-3d-gif {
+    width: 250px; /* Limita el ancho del GIF al 100% del contenedor */
+    height: 135px; /* Asegura que la altura se ajuste manteniendo las proporciones */
+    display: block; /* Cambia el GIF a bloque para permitir el ajuste de margen */
+    margin: 0 auto; /* Centra el GIF horizontalmente si es necesario */
+    border-radius: 3px; /* Bordes redondeados */
+  }
