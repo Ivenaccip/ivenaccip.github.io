@@ -1,23 +1,38 @@
-<script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificaciones</title>
+    <!-- Asegúrate de incluir aquí tus estilos CSS si los tienes -->
+    <link rel="stylesheet" href="../css/certification_styles.css">
+</head>
+<body>
+    <div id="certificaciones-container"></div>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
   
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDV11SjtSwGo4Y_ogujRYTEeXeZj47k31Q",
-      authDomain: "portafolio-53b55.firebaseapp.com",
-      projectId: "portafolio-53b55",
-      storageBucket: "portafolio-53b55.appspot.com",
-      messagingSenderId: "426732472680",
-      appId: "1:426732472680:web:c43ac314da2acdb2cf6edd",
-      measurementId: "G-V8LN359VDM"
-    };
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+        apiKey: "AIzaSyDV11SjtSwGo4Y_ogujRYTEeXeZj47k31Q",
+        authDomain: "portafolio-53b55.firebaseapp.com",
+        projectId: "portafolio-53b55",
+        storageBucket: "portafolio-53b55.appspot.com",
+        messagingSenderId: "426732472680",
+        appId: "1:426732472680:web:c43ac314da2acdb2cf6edd",
+        measurementId: "G-V8LN359VDM"
+        };
   
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  </script>
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+
+    </script>
+    <script type="module" src="../js/loadCertifications.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+#certificaciones-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.certificacion {
+    margin: 10px;
+    box-shadow: 0 0 5px #ccc; /* Sombra ligera para resaltar */
+    text-align: center; /* Centra el texto del nombre */
+}
+
+.certificacion-imagen {
+    max-width: 100%; /* Asegura que la imagen no exceda el tamaño del div */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.certificacion-nombre {
+    margin-top: 5px; /* Espacio entre la imagen y el nombre */
+    font-weight: bold; /* Nombre en negrita */
+}
