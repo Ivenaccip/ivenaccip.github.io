@@ -101,15 +101,17 @@ main {
     color: white; /* Asegura que el título sea visible */
     margin-bottom: 10px; /* Añade espacio debajo del título */
   }
-
-  #projects h3,
-  #interviews h3,
-  #certifications h3{
+  
+  #projects a,
+  #interviews a,
+  #certifications a{
     text-align: start; /* Centra el título */
     font-size: 1.3em; /* Aumenta el tamaño del título */
     letter-spacing: 0.05em;
     color: white; /* Asegura que el título sea visible */
     margin-bottom: 10x; /* Añade espacio debajo del título */
+    text-decoration: none;
+    font-weight: bold;
   }
   
   .projects-container {
