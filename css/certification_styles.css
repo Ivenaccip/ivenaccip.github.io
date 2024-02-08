@@ -1,21 +1,45 @@
+/* Estilos generales y del fondo */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #222; /* Fondo de color #222 */
+    color: white; /* Texto en color blanco */
+    font-family: Arial, sans-serif; /* Tipo de letra, puedes cambiarlo según tus preferencias */
+}
+
+/* Estilos para el contenedor de certificaciones */
 #certificaciones-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px;
 }
 
+/* Estilos para cada certificación */
 .certificacion {
-    margin: 10px;
-    box-shadow: 0 0 5px #ccc; /* Sombra ligera para resaltar */
-    text-align: center; /* Centra el texto del nombre */
+    width: calc(100% / 6 - 20px); /* Calcula el ancho para 6 elementos por fila, restando márgenes */
+    height: 290px; /* Altura de los rectángulos */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #cb7afc; /* Borde morado */
+    margin: 10px; /* Margen alrededor de cada certificación */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido que se desborde */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
 }
 
+/* Estilos para la imagen del certificado */
 .certificacion-imagen {
-    max-width: 100%; /* Asegura que la imagen no exceda el tamaño del div */
-    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100%; /* La imagen ocupa todo el ancho del rectángulo */
+    max-height: 70%; /* Altura máxima de la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área asignada sin perder su proporción */
 }
 
+/* Estilos para el nombre del certificado */
 .certificacion-nombre {
-    margin-top: 5px; /* Espacio entre la imagen y el nombre */
-    font-weight: bold; /* Nombre en negrita */
+    flex-grow: 1; /* Permite que el nombre ocupe el espacio restante */
+    display: flex;
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    padding: 10px; /* Espaciado interno */
 }
