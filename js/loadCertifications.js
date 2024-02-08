@@ -21,11 +21,36 @@
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
         const analytics = getAnalytics(app);
-
-        // New way to fetch collections with Firebase 9+ modular syntax
         const certificacionesCol = collection(db, "certificaciones");
+
+        function createCertificationCard(nombre, png) {
+            // Crear elementos para la tarjeta de certificación
+            const card = document.createElement('div');
+            const image = document.createElement('img');
+            const name = document.createElement('div');
+        
+            // Añadir clases para el estilo
+            card.classList.add('certificacion');
+            image.classList.add('certificacion-imagen');
+            name.classList.add('certificacion-nombre');
+        
+            // Configurar atributos de imagen y nombre
+            image.src = `../src/certifications/${png}`;
+            image.alt = `Certificado ${nombre}`;
+            name.textContent = nombre;
+        
+            // Añadir imagen y nombre al card
+            card.appendChild(image);
+            card.appendChild(name);
+        
+            return card;
+        }
+
         getDocs(certificacionesCol).then((querySnapshot) => {
+            const container = document.getElementById('certificaciones-container');
             querySnapshot.forEach((doc) => {
-                console.log(`${doc.id} => `, doc.data().nombre);
+                const data = doc.data();
+                const card = createCertificationCard(data.nombre, data.png);
+                container.appendChild(card);
             });
         });
