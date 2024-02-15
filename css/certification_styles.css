@@ -46,16 +46,34 @@ body {
 }
 
 /* Estilos de texto*/
-#other-certifications h2,
-#top-certifications h2{
+h2:nth-of-type(1) {
     font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a;
-    color: #cb7afc;
+    background-color: #222;
+    color: #ffd700; /* Color dorado para el texto */
     margin: 0;
-    padding: 0;
+    padding: 20px 0; /* Padding vertical */
     text-align: center;
     width: 100%;
-    font-size: 2em; /* Ajusta el tamaño de la fuente */
-    letter-spacing: 0.05em; /* Aumenta el espaciado entre letras */
-    line-height: 1.5; /* Ajusta el espaciado entre líneas */
-  }
+    font-size: 2em; /* Tamaño de la fuente */
+    letter-spacing: 0.05em; /* Espaciado entre letras */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.titulo-dorado {
+    color: #ffd700; /* Color dorado */
+    /* Los demás estilos permanecen iguales */
+}
+
+/* Estilos para el segundo h2 */
+h2:nth-of-type(2) {
+    font-family: 'Arial', sans-serif;
+    background-color: #222;
+    color: #cb7afc; /* Manteniendo tu color original */
+    margin: 0;
+    padding: 20px 0; /* Padding vertical */
+    text-align: center;
+    width: 100%;
+    font-size: 2em; /* Tamaño de la fuente */
+    letter-spacing: 0.05em; /* Espaciado entre letras */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
