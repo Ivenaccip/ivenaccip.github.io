@@ -51,7 +51,10 @@ getDocs(certificacionesQuery).then((querySnapshot) => {
     const container = document.getElementById('certificaciones-container');
     querySnapshot.forEach((doc) => {
         const data = doc.data();
-        const card = createCertificationCard(data.nombre, data.png);
-        container.appendChild(card);
+        if (!data.top) {
+            const card = createCertificationCard(data.nombre, data.png);
+            container.appendChild(card);
+        }
     });
 });
+
