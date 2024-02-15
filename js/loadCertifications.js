@@ -48,12 +48,16 @@ function createCertificationCard(nombre, png) {
 }
 
 getDocs(certificacionesQuery).then((querySnapshot) => {
+    const topContainer = document.getElementById('top-certifications-container');
     const container = document.getElementById('certificaciones-container');
     querySnapshot.forEach((doc) => {
         const data = doc.data();
+        const card = createCertificationCard(data.nombre, data.png);
+        // Verifica si 'top' es false antes de añadir la certificación
         if (!data.top) {
-            const card = createCertificationCard(data.nombre, data.png);
             container.appendChild(card);
+        }else{
+            topContainer.appendChild(card)
         }
     });
 });
