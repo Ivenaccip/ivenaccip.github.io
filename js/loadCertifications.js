@@ -40,9 +40,8 @@ function showCertificationPopup(data) {
             <div id="close-popup" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px; color: black;">&times;</div>
             <h2>${data.nombre}</h2>
             <img src="../src/certifications/${data.png}" alt="Certificado ${data.nombre}">
-            <p><strong>Fecha:</strong> ${fechaFormateada}</p>
-            <p><strong>Horas:</strong> ${data.horas}</p>
-            <p><strong>Descripción:</strong> ${data.description}</p>
+            <p><strong>Date:</strong> ${fechaFormateada} <strong>Hours:</strong> ${data.horas}</p>
+            <p><strong>Description:</strong> ${data.description}</p>
         </div>
     `;
 
