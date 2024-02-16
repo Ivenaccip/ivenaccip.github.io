@@ -24,19 +24,25 @@ const analytics = getAnalytics(app);
 // Modificación aquí: Crear una consulta que ordene las certificaciones por fecha en orden descendente
 const certificacionesQuery = query(collection(db, "certificaciones"), orderBy("fecha", "desc"));
 
+function formatDate(date) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('es-ES', options); // Ajusta el locale según necesites
+}
+
 function showCertificationPopup(data) {
     const popupContainer = document.getElementById('popup-container');
     if (!popupContainer) return; // Si no existe el contenedor del pop-up, no hacer nada
 
-    // Limpiar el contenido anterior del pop-up
+    const fechaFormateada = formatDate(data.fecha.toDate()); // Asumiendo que data.fecha es un Timestamp de Firestore
+
     popupContainer.innerHTML = `
-        <div class="popup">
+        <div class="popup" style="position: relative; background-color: white; padding: 20px; padding-top: 40px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5); text-align: center; max-width: 500px; width: 90%; margin: auto; color: black;">
+            <div id="close-popup" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px; color: black;">&times;</div>
             <h2>${data.nombre}</h2>
             <img src="../src/certifications/${data.png}" alt="Certificado ${data.nombre}">
-            <p><strong>Fecha:</strong> ${data.fecha}</p>
+            <p><strong>Fecha:</strong> ${fechaFormateada}</p>
             <p><strong>Horas:</strong> ${data.horas}</p>
             <p><strong>Descripción:</strong> ${data.description}</p>
-            <button id="close-popup">Cerrar</button>
         </div>
     `;
 
