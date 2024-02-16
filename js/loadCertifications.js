@@ -49,7 +49,7 @@ function showCertificationPopup(data) {
     });
 }
 
-function createCertificationCard(nombre, png) {
+function createCertificationCard(nombre, png, isTop) {
     // Crear elementos para la tarjeta de certificación
     const card = document.createElement('div');
     const image = document.createElement('img');
