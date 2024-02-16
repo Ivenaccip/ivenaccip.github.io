@@ -29,6 +29,18 @@ body {
     box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
 }
 
+.certificacion-top {
+    width: calc(100% / 6 - 20px); /* Calcula el ancho para 6 elementos por fila, restando márgenes */
+    height: 290px; /* Altura de los rectángulos */
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ffd700; /* Borde dorado para destacar */
+    margin: 10px; /* Margen alrededor de cada certificación */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido que se desborde */
+    box-sizing: border-box; /* Incluye el padding y el borde en el ancho y alto total */
+}
+
 /* Estilos para la imagen del certificado */
 .certificacion-imagen {
     width: 100%; /* La imagen ocupa todo el ancho del rectángulo */

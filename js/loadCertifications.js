@@ -31,7 +31,7 @@ function createCertificationCard(nombre, png) {
     const name = document.createElement('div');
 
     // Añadir clases para el estilo
-    card.classList.add('certificacion');
+    card.classList.add(isTop? 'certificacion-top' : 'certificacion');
     image.classList.add('certificacion-imagen');
     name.classList.add('certificacion-nombre');
 
@@ -52,13 +52,12 @@ getDocs(certificacionesQuery).then((querySnapshot) => {
     const container = document.getElementById('certificaciones-container');
     querySnapshot.forEach((doc) => {
         const data = doc.data();
-        const card = createCertificationCard(data.nombre, data.png);
-        // Verifica si 'top' es false antes de añadir la certificación
+        // Pasar 'true' como tercer argumento si 'top' es true en los datos
+        const card = createCertificationCard(data.nombre, data.png, data.top);
         if (!data.top) {
             container.appendChild(card);
-        }else{
-            topContainer.appendChild(card)
+        } else {
+            topContainer.appendChild(card);
         }
     });
 });
-
