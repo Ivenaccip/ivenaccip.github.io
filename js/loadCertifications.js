@@ -24,6 +24,31 @@ const analytics = getAnalytics(app);
 // Modificación aquí: Crear una consulta que ordene las certificaciones por fecha en orden descendente
 const certificacionesQuery = query(collection(db, "certificaciones"), orderBy("fecha", "desc"));
 
+function showCertificationPopup(data) {
+    const popupContainer = document.getElementById('popup-container');
+    if (!popupContainer) return; // Si no existe el contenedor del pop-up, no hacer nada
+
+    // Limpiar el contenido anterior del pop-up
+    popupContainer.innerHTML = `
+        <div class="popup">
+            <h2>${data.nombre}</h2>
+            <img src="../src/certifications/${data.png}" alt="Certificado ${data.nombre}">
+            <p><strong>Fecha:</strong> ${data.fecha}</p>
+            <p><strong>Horas:</strong> ${data.horas}</p>
+            <p><strong>Descripción:</strong> ${data.description}</p>
+            <button id="close-popup">Cerrar</button>
+        </div>
+    `;
+
+    // Mostrar el pop-up
+    popupContainer.style.display = 'block';
+
+    // Agregar evento para cerrar el pop-up
+    document.getElementById('close-popup').addEventListener('click', () => {
+        popupContainer.style.display = 'none';
+    });
+}
+
 function createCertificationCard(nombre, png) {
     // Crear elementos para la tarjeta de certificación
     const card = document.createElement('div');
@@ -43,6 +68,9 @@ function createCertificationCard(nombre, png) {
     // Añadir imagen y nombre al card
     card.appendChild(image);
     card.appendChild(name);
+
+    // Manejador de clics para mostrar el pop-up
+    card.addEventListener('click', () => showCertificationPopup(data));
 
     return card;
 }
