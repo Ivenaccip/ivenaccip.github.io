@@ -39,7 +39,7 @@ function showCertificationPopup(data) {
         <div class="popup" style="position: relative; background-color: white; padding: 20px; padding-top: 40px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.5); text-align: center; max-width: 500px; width: 90%; margin: auto; color: black;">
             <div id="close-popup" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 24px; color: black;">&times;</div>
             <h2>${data.nombre}</h2>
-            <img src="../src/certifications/${data.png}" alt="Certificado ${data.nombre}">
+            <img src="../src/certifications/${data.png}" alt="Certificado ${data.nombre}" class="popup-image">
             <p><strong>Date:</strong> ${fechaFormateada} <strong>Hours:</strong> ${data.horas}</p>
             <p><strong>Description:</strong> ${data.description}</p>
         </div>
