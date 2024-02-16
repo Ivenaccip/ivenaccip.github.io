@@ -49,21 +49,21 @@ function showCertificationPopup(data) {
     });
 }
 
-function createCertificationCard(nombre, png, isTop) {
+function createCertificationCard(data) {
     // Crear elementos para la tarjeta de certificación
     const card = document.createElement('div');
     const image = document.createElement('img');
     const name = document.createElement('div');
 
     // Añadir clases para el estilo
-    card.classList.add(isTop? 'certificacion-top' : 'certificacion');
+    card.classList.add(data.top ? 'certificacion-top' : 'certificacion');
     image.classList.add('certificacion-imagen');
     name.classList.add('certificacion-nombre');
 
     // Configurar atributos de imagen y nombre
-    image.src = `../src/certifications/${png}`;
-    image.alt = `Certificado ${nombre}`;
-    name.textContent = nombre;
+    image.src = `../src/certifications/${data.png}`;
+    image.alt = `Certificado ${data.nombre}`;
+    name.textContent = data.nombre;
 
     // Añadir imagen y nombre al card
     card.appendChild(image);
@@ -80,8 +80,8 @@ getDocs(certificacionesQuery).then((querySnapshot) => {
     const container = document.getElementById('certificaciones-container');
     querySnapshot.forEach((doc) => {
         const data = doc.data();
-        // Pasar 'true' como tercer argumento si 'top' es true en los datos
-        const card = createCertificationCard(data.nombre, data.png, data.top);
+        // Ahora pasamos el objeto data completo
+        const card = createCertificationCard(data);
         if (!data.top) {
             container.appendChild(card);
         } else {
