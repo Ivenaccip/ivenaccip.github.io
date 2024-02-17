@@ -19,15 +19,24 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
 
 // Modificación aquí: Crear una consulta que ordene las certificaciones por fecha en orden descendente
 const certificacionesQuery = query(collection(db, "certificaciones"), orderBy("fecha", "desc"));
 
 function formatDate(date) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return date.toLocaleDateString('es-ES', options); // Ajusta el locale según necesites
+    // Obtener el día, mes y año del objeto Date
+    let day = date.getDate();
+    let month = date.getMonth() + 1; // getMonth() devuelve un valor entre 0 y 11, por lo que se suma 1
+    let year = date.getFullYear();
+
+    // Asegurarse de que el mes y el día sean de dos dígitos
+    month = month < 10 ? '0' + month : month;
+    day = day < 10 ? '0' + day : day;
+
+    // Construir la fecha en formato DD/MM/YYYY
+    return `${day}/${month}/${year}`;
 }
+
 
 function showCertificationPopup(data) {
     const popupContainer = document.getElementById('popup-container');

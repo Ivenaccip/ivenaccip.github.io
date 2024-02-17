@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documento</title>
+    <link rel="stylesheet" href="proyectos_styles.css">
+</head>
+<body>
+    <div id="primer-div">
+        <h2>Nombre</h2> <!-- El campo se llama nombre y es de tipo string -->
+    </div>
+    
+    <div id="segundo-div">
+        <div class="dos-tercios caja">
+            <!-- El campo se llama png y vamos a traer un string y después vamos a buscarlo en la carpeta ../src -->
+        </div>
+        <div class="un-tercio caja">
+            <!-- El campo se llama code y vamos a traer un array con entradas para latex, me comentabas que podiamos hacer algo con mathjax -->
+        </div>
+    </div>
+    
+    <div id="tercer-div" class="caja">
+        <p>Fecha inicial - Fecha final</p> <!-- Aquí vamos a traer dos campos. El primer campo se llama fecha_inicio esta en formato timestamp, el segundo campo se llama fecha_final, puede ser un null o un timestamp, en caso de que sea un null debe de regresar un str "actually"-->
+    </div>
+    
+    <div id="cuarto-div">
+        <div class="caja">
+            <h3>Contexto</h3>
+            <p>Descripción del contexto...</p> <!-- Vamos a traer un campo que se llama contexto, este esta en string-->
+        </div>
+        <div class="caja">
+            <h3>Problemática</h3>
+            <p>Descripción de la problemática...</p> <!-- Vamos a traer un campo llamado problematica, e igual esta en string-->
+        </div>
+        <div class="caja">
+            <h3>Solución</h3>
+            <p>Descripción de la solución...</p> <!-- Vamos a trare un campo llamado solución, e igual esta en string-->
+        </div>
+    </div>
+    <script src="loadProject.js"></script>
+</body>
+</html>
