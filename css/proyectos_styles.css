@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h2 {
+    color: #333;
+    /* max-height: 16.5%; No es común aplicar max-height a elementos h2 */
+}
+
+.dos-tercios, .un-tercio, #segundo-div, #tercer-div, #cuarto-div {
+    overflow: auto; /* Añade scroll si el contenido excede el max-height */
+}
+
+.dos-tercios {
+    padding: 10px;
+    width: 66.66%;
+    max-height: 33.33vh; /* Considera usar vh para una medida relativa a la altura de la ventana */
+}
+
+.un-tercio {
+    padding: 10px;
+    width: 33.33%;
+    max-height: 33.33vh;
+}
+
+#segundo-div {
+    display: flex; /* Asegura que los hijos se alineen horizontalmente */
+    max-height: 33.33vh;
+    gap: 10px;
+}
+
+#tercer-div {
+    margin-top: 20px;
+    max-height: 16.5vh;
+}
+
+#cuarto-div {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-height: 33.33vh;
+}
+
+.caja {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden; /* Oculta el contenido que exceda los límites de la caja */
+}
